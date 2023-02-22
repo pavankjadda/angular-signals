@@ -4,7 +4,7 @@ import { Component, importProvidersFrom, inject, OnInit } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js/dist/zone';
 import { EmployeeService } from './employee.service';
-import { signal } from './signals';
+import { computed, signal } from './signals';
 import { effect } from './signals/effect';
 
 export interface Employee {
@@ -43,13 +43,13 @@ export class App implements OnInit {
 
 	constructor() {
 		effect(() => {
-			console.log('Employee changed', this.employees());
+			console.log('Inside effect(). Employee changed', this.employees());
 		});
 	}
 
 	ngOnInit(): void {
 		this.employeeService.getEmployees().subscribe((data) => {
-			this.employees.update((employees) => data);
+			this.employees.set(data);
 		});
 	}
 }
