@@ -12,7 +12,7 @@ import { EmployeeService } from './employee.service';
 			<h1>Signals Demo</h1>
 			<hr />
 			<h2>Employees</h2>
-			<div *ngFor="let employee of employees().data">
+			<div *ngFor="let employee of employees()">
 				<p>First Name: {{ employee.firstName }}</p>
 				<p>Last Name: {{ employee.lastName }}</p>
 				<p>Email: {{ employee.email }}</p>
