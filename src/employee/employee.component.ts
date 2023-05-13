@@ -11,8 +11,7 @@ import { EmployeeService } from './employee.service';
 		<div style="margin:20px">
 			<h1>Signals Demo</h1>
 			<hr />
-			{{user().username}}
-			{{user().email}}
+	
 			<h2>Employees</h2>
 			<div *ngFor="let employee of employees()">
 				<p>First Name: {{ employee.firstName }}</p>
