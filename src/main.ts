@@ -1,4 +1,3 @@
-import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {Component, importProvidersFrom} from '@angular/core';
 import {bootstrapApplication} from '@angular/platform-browser';
@@ -21,5 +20,5 @@ export interface Employee {
 export class App {}
 
 bootstrapApplication(App, {
-	providers: [importProvidersFrom(CommonModule, HttpClientModule)],
+	providers: [importProvidersFrom(HttpClientModule)],
 });
