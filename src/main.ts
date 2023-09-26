@@ -1,31 +1,29 @@
-import {HttpClientModule} from '@angular/common/http';
-import {Component, importProvidersFrom} from '@angular/core';
-import {bootstrapApplication} from '@angular/platform-browser';
-import {EmployeeComponent} from './employee/employee.component';
-import {provideAnimations} from '@angular/platform-browser/animations';
-import {TuiRootModule} from '@taiga-ui/core';
+import { HttpClientModule } from '@angular/common/http';
+import { importProvidersFrom, isDevMode } from '@angular/core';
+import { bootstrapApplication, BrowserModule } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideStore, StoreModule } from '@ngrx/store';
+import { rootReducer } from './app/state/root.reducer';
+import { provideStoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AppComponent } from './app/app.component';
 
-export interface Employee {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  age: number;
-}
-
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  template: `
-    <tui-root >
-      <app-employee style="display: flex;justify-content: center;width: auto; margin-top: 1rem"/>
-    </tui-root>
-    `,
-  imports: [EmployeeComponent, TuiRootModule],
-})
-export class App {
-}
-
-bootstrapApplication(App, {
-  providers: [importProvidersFrom( TuiRootModule, HttpClientModule),provideAnimations()],
+bootstrapApplication(AppComponent, {
+	providers: [
+		importProvidersFrom(
+			BrowserModule,
+			StoreModule.forRoot(rootReducer, {}),
+			StoreDevtoolsModule.instrument({
+				name: 'PRES',
+				logOnly: false,
+				autoPause: true,
+			}),
+			HttpClientModule
+		),
+		provideAnimations(),
+		provideStore(),
+		provideStoreDevtools({
+			maxAge: 25,
+			logOnly: !isDevMode(),
+		}),
+	],
 });

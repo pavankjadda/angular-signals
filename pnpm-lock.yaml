@@ -32,6 +32,15 @@ dependencies:
   '@angular/router':
     specifier: ^16.2.5
     version: 16.2.5(@angular/common@16.2.5)(@angular/core@16.2.5)(@angular/platform-browser@16.2.5)(rxjs@7.8.1)
+  '@ngrx/entity':
+    specifier: ^16.2.0
+    version: 16.2.0(@angular/core@16.2.5)(@ngrx/store@16.2.0)(rxjs@7.8.1)
+  '@ngrx/store':
+    specifier: ^16.2.0
+    version: 16.2.0(@angular/core@16.2.5)(rxjs@7.8.1)
+  '@ngrx/store-devtools':
+    specifier: ^16.2.0
+    version: 16.2.0(@ngrx/store@16.2.0)(rxjs@7.8.1)
   '@taiga-ui/addon-table':
     specifier: ^3.45.0
     version: 3.45.0(@angular/common@16.2.5)(@angular/core@16.2.5)(@ng-web-apis/intersection-observer@3.1.2)(@taiga-ui/cdk@3.45.0)(@taiga-ui/core@3.45.0)(@taiga-ui/i18n@3.45.0)(@taiga-ui/kit@3.45.0)(@tinkoff/ng-polymorpheus@4.1.0)(rxjs@7.8.1)
@@ -2046,6 +2055,41 @@ packages:
     dependencies:
       '@angular/core': 16.2.5(rxjs@7.8.1)(zone.js@0.14.0)
       '@ng-web-apis/common': 3.0.2(@angular/common@16.2.5)(@angular/core@16.2.5)(rxjs@7.8.1)
+      tslib: 2.6.2
+    dev: false
+
+  /@ngrx/entity@16.2.0(@angular/core@16.2.5)(@ngrx/store@16.2.0)(rxjs@7.8.1):
+    resolution: {integrity: sha512-n8Vsz48/u14R8S7akLO7TWmqXGcvCYacCIS106hC3FVkOwAOflhcstGYu6oShbqOVuu0Vcw7s/amc2oAJV4YkQ==}
+    peerDependencies:
+      '@angular/core': ^16.0.0
+      '@ngrx/store': 16.2.0
+      rxjs: ^6.5.3 || ^7.5.0
+    dependencies:
+      '@angular/core': 16.2.5(rxjs@7.8.1)(zone.js@0.14.0)
+      '@ngrx/store': 16.2.0(@angular/core@16.2.5)(rxjs@7.8.1)
+      rxjs: 7.8.1
+      tslib: 2.6.2
+    dev: false
+
+  /@ngrx/store-devtools@16.2.0(@ngrx/store@16.2.0)(rxjs@7.8.1):
+    resolution: {integrity: sha512-m7mkNpIIp8fA8yNG5T0ZKm1RCP2fE0IVBEtcbj2Z/88fW4vyvobVBdBqha6zgYTuA5X4m28npMra9GPNPsuDLA==}
+    peerDependencies:
+      '@ngrx/store': 16.2.0
+      rxjs: ^6.5.3 || ^7.5.0
+    dependencies:
+      '@ngrx/store': 16.2.0(@angular/core@16.2.5)(rxjs@7.8.1)
+      rxjs: 7.8.1
+      tslib: 2.6.2
+    dev: false
+
+  /@ngrx/store@16.2.0(@angular/core@16.2.5)(rxjs@7.8.1):
+    resolution: {integrity: sha512-C7oIUC87xXV+1dTGUwYG/L4p0IZdYv/Ou1nTL/LffyAHllmmygTA5gzLB87abLOhucAxlFIQMQ8t/GSxdk/+QA==}
+    peerDependencies:
+      '@angular/core': ^16.0.0
+      rxjs: ^6.5.3 || ^7.5.0
+    dependencies:
+      '@angular/core': 16.2.5(rxjs@7.8.1)(zone.js@0.14.0)
+      rxjs: 7.8.1
       tslib: 2.6.2
     dev: false
 
