@@ -2,28 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { EmployeeService } from './employee.service';
 import { Employee } from '../types/employee';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
 	selector: 'app-employee',
 	standalone: true,
-	imports: [CommonModule],
-	template: `
-		<div style="margin:20px">
-			<h1>Signals Demo</h1>
-			<hr />
-			<div>
-				<h2>All Employees Signal</h2>
-				<div *ngFor="let employee of employees()">
-					<p>First Name: {{ employee.firstName }}</p>
-					<p>Last Name: {{ employee.lastName }}</p>
-					<p>Email: {{ employee.email }}</p>
-					<p>Phone: {{ employee.phone }}</p>
-					<p>Age: {{ employee.age }}</p>
-					<hr />
-				</div>
-			</div>
-		</div>
-	`,
+	imports: [CommonModule, TableModule, ButtonModule],
+	templateUrl: './employee.component.html',
 })
 export class EmployeeComponent implements OnInit {
 	employees = signal<Employee[]>([]);
