@@ -1,14 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { EmployeeService } from './employee.service';
 import { Employee } from '../types/employee';
-import { TableModule } from 'primeng/table';
-import { ButtonModule } from 'primeng/button';
+import { EmployeeTableComponent } from './employee-table/employee-table.component';
 
 @Component({
 	selector: 'app-employee',
 	standalone: true,
-	imports: [CommonModule, TableModule, ButtonModule],
+	imports: [EmployeeTableComponent],
 	templateUrl: './employee.component.html',
 })
 export class EmployeeComponent implements OnInit {
