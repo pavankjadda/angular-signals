@@ -1,15 +1,6 @@
 import { Component } from '@angular/core';
 import { EmployeeComponent } from './employee/employee.component';
 
-export interface Employee {
-	id: number;
-	firstName: string;
-	lastName: string;
-	email: string;
-	phone: string;
-	age: number;
-}
-
 @Component({
 	selector: 'app-root',
 	standalone: true,
