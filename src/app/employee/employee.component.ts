@@ -17,7 +17,12 @@ export class EmployeeComponent implements OnInit {
 	ngOnInit(): void {
 		this.employeeService.getEmployees().subscribe((employees) => {
 			this.employees.set(employees);
-			this.name.set('Employee List');
+			this.name.set('Loaded employees from server');
+
+			setTimeout(() => {
+				this.employees.set(employees.slice(0, 4));
+				this.name.set('Removed one employee');
+			}, 2000);
 		});
 	}
 }

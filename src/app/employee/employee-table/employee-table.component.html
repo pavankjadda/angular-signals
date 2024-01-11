@@ -1,8 +1,12 @@
-Name: {{ name() }}
+<div class="align-center">Message: {{ name() }}</div>
 
-@if (employees()) {
-<p-table [paginator]="true" [rowsPerPageOptions]="[5, 10, 20, 100]" [rows]="5" [showCurrentPageReport]="true"
-	[tableStyle]="{ 'min-width': '50rem' }" [value]="employees()"
+<p-table
+	[paginator]="true"
+	[rowsPerPageOptions]="[5, 10, 20, 100]"
+	[rows]="5"
+	[showCurrentPageReport]="true"
+	[tableStyle]="{ 'min-width': '50rem' }"
+	[value]="employees()"
 	currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
 	<ng-template pTemplate="header">
 		<tr>
@@ -26,4 +30,3 @@ Name: {{ name() }}
 		<p-button icon="pi pi-plus" styleClass="p-button-text" type="button"></p-button>
 	</ng-template>
 </p-table>
-}
