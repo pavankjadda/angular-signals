@@ -11,17 +11,17 @@ import { EmployeeTableComponent } from './employee-table/employee-table.componen
 })
 export class EmployeeComponent implements OnInit {
 	employees = signal<Employee[]>([]);
-	name = signal('');
+	message = signal('');
 	employeeService = inject(EmployeeService);
 
 	ngOnInit(): void {
 		this.employeeService.getEmployees().subscribe((employees) => {
 			this.employees.set(employees);
-			this.name.set('Loaded employees from server');
+			this.message.set('Loaded employees from server');
 
 			setTimeout(() => {
 				this.employees.set(employees.slice(0, 4));
-				this.name.set('Removed one employee');
+				this.message.set('Removed one employee');
 			}, 2000);
 		});
 	}

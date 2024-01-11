@@ -6,4 +6,4 @@ import { AppComponent } from './app/app.component';
 
 bootstrapApplication(AppComponent, {
 	providers: [importProvidersFrom(BrowserModule, HttpClientModule), provideAnimations()],
-}).then((r) => console.log(r));
+});
