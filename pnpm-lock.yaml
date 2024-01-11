@@ -55,6 +55,9 @@ devDependencies:
   '@angular/compiler-cli':
     specifier: ^17.1.0-rc.0
     version: 17.1.0-rc.0(@angular/compiler@17.1.0-rc.0)(typescript@5.2.2)
+  '@angular/language-service':
+    specifier: 17.1.0-rc.0
+    version: 17.1.0-rc.0
   '@types/dompurify':
     specifier: 3.0.5
     version: 3.0.5
@@ -385,6 +388,11 @@ packages:
       rxjs: 7.8.1
       tslib: 2.6.2
     dev: false
+
+  /@angular/language-service@17.1.0-rc.0:
+    resolution: {integrity: sha512-0ZQD5FcdsU8deqkeNJmkgI7tfBnEBKhgSdZ8pWhgojsQIekzsnm8uHjwpWq8AaFKLcdOEsmKpERjIAHLcSf3hg==}
+    engines: {node: ^18.13.0 || >=20.9.0}
+    dev: true
 
   /@angular/platform-browser-dynamic@17.1.0-rc.0(@angular/common@17.1.0-rc.0)(@angular/compiler@17.1.0-rc.0)(@angular/core@17.1.0-rc.0)(@angular/platform-browser@17.1.0-rc.0):
     resolution: {integrity: sha512-wuMlPUSEkaJTz9UIbixBL+SNmie09+FEzu9nd8oAXSuznGez6vC1za7KAiubr782fTg/g5M3X2hrpOgqDvcmnQ==}

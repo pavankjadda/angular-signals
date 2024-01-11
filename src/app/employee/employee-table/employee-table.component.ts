@@ -10,5 +10,6 @@ import { Employee } from '../../types/employee';
 	templateUrl: './employee-table.component.html',
 })
 export class EmployeeTableComponent {
-	employees = input<Employee[]>();
+	employees = input<Employee[]>([]);
+	name = input<string>();
 }

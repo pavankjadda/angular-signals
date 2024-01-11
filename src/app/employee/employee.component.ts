@@ -11,11 +11,13 @@ import { EmployeeTableComponent } from './employee-table/employee-table.componen
 })
 export class EmployeeComponent implements OnInit {
 	employees = signal<Employee[]>([]);
+	name = signal('');
 	employeeService = inject(EmployeeService);
 
 	ngOnInit(): void {
 		this.employeeService.getEmployees().subscribe((employees) => {
 			this.employees.set(employees);
+			this.name.set('Employee List');
 		});
 	}
 }

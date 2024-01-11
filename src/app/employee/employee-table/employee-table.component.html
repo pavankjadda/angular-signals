@@ -1,10 +1,8 @@
-<p-table
-	[paginator]="true"
-	[rowsPerPageOptions]="[5, 10, 20, 100]"
-	[rows]="5"
-	[showCurrentPageReport]="true"
-	[tableStyle]="{ 'min-width': '50rem' }"
-	[value]="employees()"
+Name: {{ name() }}
+
+@if (employees()) {
+<p-table [paginator]="true" [rowsPerPageOptions]="[5, 10, 20, 100]" [rows]="5" [showCurrentPageReport]="true"
+	[tableStyle]="{ 'min-width': '50rem' }" [value]="employees()"
 	currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
 	<ng-template pTemplate="header">
 		<tr>
@@ -28,3 +26,4 @@
 		<p-button icon="pi pi-plus" styleClass="p-button-text" type="button"></p-button>
 	</ng-template>
 </p-table>
+}
